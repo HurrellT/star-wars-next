@@ -1,6 +1,6 @@
 import { Card, CardBody, CardHeader, Skeleton } from "@heroui/react";
 
-const CardSkeleton = () => (
+const PersonCardSkeleton = () => (
   <Card>
     <CardHeader>
       <Skeleton className="w-3/5 rounded-lg">
@@ -21,4 +21,4 @@ const CardSkeleton = () => (
   </Card>
 );
 
-export default CardSkeleton;
+export default PersonCardSkeleton;

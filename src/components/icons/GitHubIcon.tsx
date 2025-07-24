@@ -1,7 +1,12 @@
 import { Github } from "lucide-react";
 
-const GitHubIcon = () => {
-  return <Github size={20} className="text-foreground" />;
+interface GitHubIconProps {
+  className?: string;
+  size?: number;
+}
+
+const GitHubIcon = ({ className = "text-foreground", size = 20 }: GitHubIconProps) => {
+  return <Github className={className} size={size} />;
 };
 
 export default GitHubIcon;

@@ -1,6 +1,6 @@
 "use client";
-import PersonCard from "@/components/molecules/PersonCard";
-import peopleQueryOptions from "@/services/people/peopleQueryOptions";
+import PersonCard from "@/components/People/molecules/PersonCard";
+import { peopleQueryOptions } from "@/services/people/people";
 import { Person } from "@/services/people/peopleSchema";
 import { useSuspenseQuery } from "@tanstack/react-query";
 import { useState } from "react";
@@ -17,7 +17,7 @@ const PeopleList = () => {
   const totalPages = Math.ceil(data.length / itemsPerPage);
 
   return (
-    <div className="space-y-6">
+    <div className="max-w-4xl mx-auto space-y-6">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {paginatedData.map((person: Person) => (
           <PersonCard key={person.name} person={person} />

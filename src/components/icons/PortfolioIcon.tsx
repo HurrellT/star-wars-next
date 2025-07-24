@@ -1,7 +1,12 @@
 import { Briefcase } from "lucide-react";
 
-const PortfolioIcon = () => {
-  return <Briefcase size={20} className="text-foreground" />;
+interface PortfolioIconProps {
+  className?: string;
+  size?: number;
+}
+
+const PortfolioIcon = ({ className = "text-foreground", size = 20 }: PortfolioIconProps) => {
+  return <Briefcase className={className} size={size} />;
 };
 
 export default PortfolioIcon;

@@ -9,7 +9,7 @@ import {
   Button,
 } from "@heroui/react";
 import StarWarsLogo from "@/components/icons/StarWarsLogo";
-import { ThemeSwitcher } from "@/components/molecules/ThemeSwitcher";
+import { ThemeSwitcher } from "@/components/common/molecules/ThemeSwitcher";
 
 const AppNavbar = () => {
   return (
@@ -19,15 +19,6 @@ const AppNavbar = () => {
       </NavbarBrand>
       
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
-        {/* <NavbarItem isActive>
-          <Link 
-            aria-current="page" 
-            href="/"
-            className="font-medium"
-          >
-            Characters
-          </Link>
-        </NavbarItem> */}
       </NavbarContent>
       
       <NavbarContent justify="end">
