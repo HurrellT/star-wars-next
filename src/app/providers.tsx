@@ -8,6 +8,7 @@ import {
   QueryClient,
   QueryClientProvider,
 } from "@tanstack/react-query";
+import { useEffect, useState } from "react";
 
 function makeQueryClient() {
   return new QueryClient({
@@ -32,6 +33,13 @@ function getQueryClient() {
 
 export function Providers({ children }: { children: React.ReactNode }) {
   const queryClient = getQueryClient();
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, [])
+  
+  if (!isClient) return null;
 
   return (
     <QueryClientProvider client={queryClient}>
