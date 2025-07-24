@@ -3,15 +3,20 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "@expo/next-adapter": "^6.0.0",
+    "@hurrellt/ui": "^1.0.4",
+    "expo": "^53.0.20",
+    "nativewind": "^4.1.23",
     "next": "15.4.3",
     "react": "19.1.0",
-    "react-dom": "19.1.0"
+    "react-dom": "19.1.0",
+    "react-native-web": "^0.20.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
