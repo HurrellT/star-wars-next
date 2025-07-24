@@ -76,7 +76,7 @@ describe('People Schemas', () => {
       
       if (!result.success) {
         const urlErrors = result.error.issues.filter(issue => 
-          issue.code === 'invalid_string' || issue.code === 'invalid_format'
+          issue.code === 'invalid_format'
         );
         expect(urlErrors.length).toBeGreaterThan(0);
       }

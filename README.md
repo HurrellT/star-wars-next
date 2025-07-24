@@ -12,6 +12,12 @@ Luego, inicia el servidor de desarrollo:
 yarn dev
 ```
 
+Para correr los tests, utiliza:
+
+```bash
+yarn test
+```
+
 # Decisiones
 ## Api
 ### Paginación
