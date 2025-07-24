@@ -1,7 +1,10 @@
 "use client";
 
+import { Button } from "@heroui/react";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
+import SunIcon from "@/components/icons/SunIcon";
+import MoonIcon from "@/components/icons/MoonIcon";
 
 export function ThemeSwitcher() {
   const [mounted, setMounted] = useState(false);
@@ -11,13 +14,30 @@ export function ThemeSwitcher() {
     setMounted(true);
   }, []);
 
-  if (!mounted) return null;
+  if (!mounted) {
+    return (
+      <Button
+        isIconOnly
+        variant="ghost"
+        size="sm"
+        className="animate-pulse"
+      >
+        <span className="w-4 h-4 bg-gray-300 rounded"></span>
+      </Button>
+    );
+  }
+
+  const isDark = theme === "dark";
 
   return (
-    <div>
-      The current theme is: {theme}
-      <button onClick={() => setTheme("light")}>Light Mode</button>
-      <button onClick={() => setTheme("dark")}>Dark Mode</button>
-    </div>
+    <Button
+      isIconOnly
+      variant="ghost"
+      size="sm"
+      onPress={() => setTheme(isDark ? "light" : "dark")}
+      className="transition-transform hover:scale-110"
+    >
+      {isDark ? <SunIcon /> : <MoonIcon />}
+    </Button>
   );
 }
