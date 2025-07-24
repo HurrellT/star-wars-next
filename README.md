@@ -1,6 +1,6 @@
 ## Star Wars Next.js App
 
-Para correr el proyecto, primero instala las dependencias:
+Para correr el proyecto, primero instala las dependencias (importante utilizar `yarn`):
 
 ```bash
 yarn install
