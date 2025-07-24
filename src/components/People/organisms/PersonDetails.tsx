@@ -1,36 +1,27 @@
 "use client";
-import { Card, CardBody, CardHeader, Button, Chip } from "@heroui/react";
-import { useSuspenseQuery } from "@tanstack/react-query";
-import { useRouter } from "next/navigation";
-import { ArrowLeft } from "lucide-react";
-import { use } from "react";
-import { personQueryOptions } from "@/services/people/people";
+import { Card, CardBody, CardHeader, Chip } from "@heroui/react";
 import PersonDetailItem from "@/components/People/atoms/PersonDetailItem";
 import CapitalizedList from "@/components/common/atoms/CapitalizedList";
 import PersonRelatedItemsSection from "@/components/People/molecules/PersonRelatedItemsSection";
+import BackButton from "@/components/common/atoms/BackButton";
 import { extractIdFromUrl, formatDate } from "@/utils/personUtils";
+import { Person } from "@/services/people/peopleSchema";
+import { useSuspenseQuery } from "@tanstack/react-query";
+import { personQueryOptions } from "@/services/people/people";
 
 type PersonDetailsProps = {
-  params: Promise<{
-    id: string;
-  }>;
+  personId: string;
+  initialData: Person;
 };
 
-const PersonDetails = ({ params }: PersonDetailsProps) => {
-  const { id: personId } = use(params);
-  const router = useRouter();
-  const { data: person } = useSuspenseQuery(personQueryOptions(personId));
-
+const PersonDetails = ({ personId, initialData }: PersonDetailsProps) => {
+  const { data: person } = useSuspenseQuery({
+    ...personQueryOptions(personId),
+    initialData,
+  });
   return (
     <div className="max-w-4xl mx-auto space-y-6">
-      <Button
-        startContent={<ArrowLeft size={16} />}
-        variant="light"
-        onPress={() => router.back()}
-        className="mb-6"
-      >
-        Back to People
-      </Button>
+      <BackButton />
       
       <Card className="w-full">
         <CardHeader className="pb-4">
