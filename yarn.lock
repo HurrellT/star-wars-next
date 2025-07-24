@@ -2097,10 +2097,10 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/retry/-/retry-0.4.3.tgz#c2b9d2e374ee62c586d3adbea87199b1d7a7a6ba"
   integrity sha512-bV0Tgo9K4hfPCek+aMAn81RppFKv2ySDQeMoSZuvTASywNTnVJCArCZE2FWqpvIatKu7VMRLWlR1EazvVhDyhQ==
 
-"@hurrellt/ui@^1.0.4":
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/@hurrellt/ui/-/ui-1.0.4.tgz#13c0dddc0e8aab3307cdca4107137f49119f1423"
-  integrity sha512-u3EypJRckchZBgO4ZpDPAcQs+H/zkbj3/CocTszMF4Q06zI83Y/6bd38LqCDu/k+7kfqNMHMF/cYEQl4VWHaZw==
+"@hurrellt/ui@^1.0.7":
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/@hurrellt/ui/-/ui-1.0.7.tgz#9f6127c17ad4ce93ad8f856183274b19010ebb21"
+  integrity sha512-o1uG7pymSksUWb0VSM3QA+9CImlk74hu88F91+d/Kp9jHdlsmnBD27KxRqXc6JFQloT7df5BxBt5XNu4RVw8JA==
   dependencies:
     nativewind "^4.1.23"
     react-native-reanimated "^3.19.0"

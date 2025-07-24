@@ -1,15 +1,9 @@
 "use client";
 
-import {
-  Navbar,
-  NavbarBrand,
-  NavbarContent,
-  NavbarItem,
-  Link,
-  Button,
-} from "@heroui/react";
-import StarWarsLogo from "@/components/icons/StarWarsLogo";
 import { ThemeSwitcher } from "@/components/common/molecules/ThemeSwitcher";
+import StarWarsLogo from "@/components/icons/StarWarsLogo";
+import { Navbar, NavbarBrand, NavbarContent, NavbarItem } from "@heroui/react";
+import { Button as CrossPlatformButton } from "@hurrellt/ui";
 
 const AppNavbar = () => {
   return (
@@ -17,26 +11,30 @@ const AppNavbar = () => {
       <NavbarBrand>
         <StarWarsLogo />
       </NavbarBrand>
-      
-      <NavbarContent className="hidden sm:flex gap-4" justify="center">
-      </NavbarContent>
-      
+
+      <NavbarContent
+        className="hidden sm:flex gap-4"
+        justify="center"
+      ></NavbarContent>
+
       <NavbarContent justify="end">
         <NavbarItem>
           <ThemeSwitcher />
         </NavbarItem>
         <NavbarItem className="hidden lg:flex">
-          <Button 
-            as={Link} 
-            color="primary" 
-            href="https://swapi.info/"
-            target="_blank"
-            rel="noopener noreferrer"
-            variant="flat"
-            size="sm"
-          >
-            Join the Rebellion
-          </Button>
+          <CrossPlatformButton
+            text={"Join the Rebellion"}
+            containerClassName="bg-primary/20 hover:bg-primary/30 active:bg-primary/40 dark:bg-primary/30 dark:hover:bg-primary/40 dark:active:bg-primary/50 px-3 py-1.5 rounded-md transition-colors"
+            textClassName="!text-primary dark:text-primary text-xs font-medium"
+            // I use onPress with window.open instead because Pressable has no href, rel or target props
+            onPress={() => {
+              window.open(
+                "https://swapi.info/",
+                "_blank",
+                "noopener,noreferrer"
+              );
+            }}
+          />
         </NavbarItem>
       </NavbarContent>
     </Navbar>
